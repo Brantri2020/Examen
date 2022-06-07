@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="tittle">Listado de tareas</span>
+                    <button class="btn btn-success float-end" routerLink="/create-task">
+                        Nuevo
+                    </button>
+                    <table *ngIf="listTasks.length>0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>                        
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Fecha fin</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Responsable</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let task of listTasks">                            
+                            <td>{{task.name}}</td>
+                            <td>{{task.endDate}}</td>
+                            <td>{{task.province}}</td>
+                            <td>{{task.city}}</td>
+                            <td>{{task.responsible}}</td>
+                            <td>{{task.status}}</td>
+                            <td>
+                                <i [routerLink]="['/edit-task', task._id]" class="fa-solid fa-pen text-primary"></i>
+                                <i class="fa-solid fa-trash-can text-danger"></i>
+                            </td>
+                          </tr>                        
+                        </tbody>
+                      </table>
+                      <h5 *ngIf="listTasks.length==0" style="text-align:start; margin-top: 10px;">No hay tareas para mostrar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

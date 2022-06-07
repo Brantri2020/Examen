@@ -1,0 +1,110 @@
+FRONT END
+*creacion
+ng new nombre
+ng serve --o
+
+*bootstrap
+https://getbootstrap.com/
+En styles
+"node_modules/bootsrap/dist/css/bootstrap.min.css"
+<button class="btn btn-primary">a</button>
+
+*Carpetas
+components, services, models
+
+*Componente creacion
+-para crear producto y editarlos
+ng g c components/crear-producto
+
+*Crear servicio producto - en general
+ng g s services/producto
+
+*crear modelo
+archivo producto.ts - con la tabla ejemplo
+
+*crear rutas
+ir a routing, dentro de routes poner los paths
+
+**uigradiente - opcional
+poner en google ugradient
+esquina derecha copiar codigo
+pegar en styles en body{}
+
+***Listado de productos
+hacemos el html
+poner iconos
+ir a fontawesome cdn
+copiar codigo
+pegar en index en head
+buscar en font awesome iconos
+copiar etiqueta y pegar donde necesite en html
+routerlink- redireccionar
+
+***Crear producto
+hacemos html formulario
+router link volver="/"
+
+*Utilizar formularios reactivos
+ir a modules en imports poner ReactiveFormsModule
+
+*** ts de crear-producto
+Creacion formulario reactivos
+conectar formulario con [formGroup] en html
+poner los formcontrol
+activar submiten boton, (ngsubmit) en form que es funcion en ts
+crear funcion para traer datos del producto
+
+*mensaje exito toastr
+buscar en google toastr angular
+npm install ngx-toastr --save
+poner script en angular.json
+poner en app module - en el import poner 2 y importar 2 
+inyectar en el ts
+y usar la funcion de impresion
+
+
+-----Crear backend
+crear carpeta
+npm init   //// iniciar proyecto
+npm install -D nodemon  ////servidor de desarrollo es esto
+npm install express mongoose dotenv    /// dotenv para archivos
+en package.json poner en script "dev": "nodemon ." para saber donde arranca
+correr proyecto npm run dev
+
+configurar servidor en index.js
+
+--- crear base en mongo
+abrir pagina web mongo, connect, connect using mongo db compass
+copiar link
+abrir mongo, pegar coneccion y cambiar "contraseña"
+crear base y coleccion
+
+---- crear carpeta conf y db.js - y prograamr
+variables.env fuera de carpeta y poner la cadena de coneccion,
+cambiando contraseña y en ves de test poner mi base
+programar db.js
+
+
+--- crear carpeta routes y producto.js
+programar ruta y ponerla en el index
+
+---crear controllers para programar ahí cada ruta
+y llamarlo desde routes
+
+probarlo con el postman
+
+---crear model y producto.js
+programar los datos
+
+programar controller producto
+
+---- Conectar front y back
+en app.module importar HttpClientModule
+
+-crear service del producto
+inyectarlo en listar producto
+
+--- instalar cors en backend , para uqe pueden correr back y front
+npm install cors
+
+--crear metodos http en servicios, crear funciones en ts y llamarlos en html
